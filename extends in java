@@ -1,0 +1,55 @@
+class Person {
+    protected String name;
+    protected int age;
+
+    public Person() {
+        this.name = "unknown";
+        this.age = 0;
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+}
+
+class Student extends Person {
+    private String studentid;
+
+    public Student(String name, int age, String studentid) {
+        super(name, age);
+        this.studentid = studentid;
+    }
+
+    public String getStudentid() {
+        return studentid;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person1 = new Person();
+        System.out.println("Person1:");
+        System.out.println("Name: " + person1.getName());
+        System.out.println("Age: " + person1.getAge());
+
+        Person person2 = new Person("Alice", 25);
+        System.out.println("\nPerson2:");
+        System.out.println("Name: " + person2.getName());
+        System.out.println("Age: " + person2.getAge());
+
+        Student student = new Student("Bob", 20, "S12345");
+        System.out.println("\nStudent:");
+        System.out.println("Name: " + student.getName());
+        System.out.println("Age: " + student.getAge());
+        System.out.println("Student ID: " + student.getStudentid());
+    }
+}
